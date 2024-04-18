@@ -6,6 +6,7 @@ import { DollarSign, File, IndianRupee, LayoutDashboard, ListChecks, ReceiptIndi
 import { redirect, usePathname } from "next/navigation"
 import TitleForm from './_components/titleForm'
 import DescriptionForm from './_components/descriptionForm'
+import ChapterForm from './_components/chapterForm'
 import PriceForm from './_components/priceForm'
 import CategoryForm from './_components/categoryForm'
 import ImageForm from './_components/imageForm'
@@ -19,10 +20,16 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) => {
 
     const course = await db.course.findUnique({
         where: {
-            id: params.courseId
+            id: params.courseId,
+            userId
         },
 
         include: {
+            chapters: {
+                orderBy: {
+                    position: "asc"
+                }
+            },
             attachments: {
                 orderBy: {
                     createdAt: "desc"
@@ -37,7 +44,6 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) => {
         }
     })
 
-    console.log('Categories',categories)
 
     if(!course) return redirect("/");
 
@@ -46,7 +52,8 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) => {
         course.description,
         course.imageUrl,
         course.price,
-        course.categoryId
+        course.categoryId,
+        course.chapters.some(chapter=> chapter.isPublished)
     ]
 
     const totalFields = requiredFields.length;
@@ -99,9 +106,8 @@ const CourseIdPage = async ({params}: {params: {courseId: string}}) => {
                             Course Chapter
                         </h2>
                     </div>
-                    <div>
-                        Todo Chapters
-                    </div>
+                    <ChapterForm initialData={course} courseId={course.id} />
+
                 </div>
 
                 <div>

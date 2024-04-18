@@ -103,7 +103,7 @@ const priceForm = ({initialData, courseId}: PriceFormProps) => {
                         </FormField>
                         
                         <div className="flex items-center gap-x-2">
-                            <Button>Save</Button>
+                            <Button disabled={!isValid || isSubmitting} >Save</Button>
                         </div>
                     </form>
                 </Form>
