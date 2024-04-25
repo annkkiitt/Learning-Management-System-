@@ -54,7 +54,7 @@ const CreatePage = () => {
     <div className='max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6'>
         <div>
             <h1 className='text-2xl'>Name your course</h1>
-            <p className='text-sm text-slate-600'>What would you like to name your course? Don't worry you can change it later.</p>
+            <p className='text-sm text-slate-600'>What would you like to name your course? Do not worry you can change it later.</p>
 
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mt-8">
@@ -66,7 +66,7 @@ const CreatePage = () => {
                         <FormItem>
                         <FormLabel>Course Title</FormLabel>
                         <FormControl>
-                            <Input disabled={isSubmitting} placeholder="E.g. 'Introduction to cloud computing'" {...field} />
+                            <Input disabled={isSubmitting} placeholder="E.g. Introduction to cloud computing" {...field} />
                         </FormControl>
                         <FormDescription>
                             What will you teach in this course?
