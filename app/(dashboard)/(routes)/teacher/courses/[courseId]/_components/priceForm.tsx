@@ -32,7 +32,7 @@ const formSchema = z.object({
 })
 
 
-const priceForm = ({initialData, courseId}: PriceFormProps) => {
+const PriceForm = ({initialData, courseId}: PriceFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const router = useRouter();
@@ -113,4 +113,4 @@ const priceForm = ({initialData, courseId}: PriceFormProps) => {
   )
 }
 
-export default priceForm
+export default PriceForm

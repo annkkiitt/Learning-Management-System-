@@ -32,7 +32,7 @@ const formSchema = z.object({
   categoryId: z.string().min(1),
 });
 
-const categoryForm = ({
+const CategoryForm = ({
   initialData,
   courseId,
   options,
@@ -125,4 +125,4 @@ const categoryForm = ({
   )
 }
 
-export default categoryForm
+export default CategoryForm

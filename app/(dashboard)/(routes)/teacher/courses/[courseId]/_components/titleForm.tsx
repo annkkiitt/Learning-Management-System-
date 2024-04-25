@@ -32,7 +32,7 @@ const formSchema = z.object({
 })
 
 
-const titleForm = ({initialData, courseId}: TitleFormProps) => {
+const TitleForm = ({initialData, courseId}: TitleFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const router = useRouter();
@@ -109,4 +109,4 @@ const titleForm = ({initialData, courseId}: TitleFormProps) => {
   )
 }
 
-export default titleForm
+export default TitleForm

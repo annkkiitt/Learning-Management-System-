@@ -27,7 +27,7 @@ const formSchema = z.object({
     }),
   })
 
-const createPage = () => {
+const CreatePage = () => {
     const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -93,4 +93,4 @@ const createPage = () => {
   )
 }
 
-export default createPage
+export default CreatePage

@@ -31,7 +31,7 @@ const formSchema = z.object({
 })
 
 
-const chapterTitleForm = ({initialData, courseId, chapterId}: ChapterTitleFormProps) => {
+const ChapterTitleForm = ({initialData, courseId, chapterId}: ChapterTitleFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const router = useRouter();
@@ -108,4 +108,4 @@ const chapterTitleForm = ({initialData, courseId, chapterId}: ChapterTitleFormPr
   )
 }
 
-export default chapterTitleForm
+export default ChapterTitleForm

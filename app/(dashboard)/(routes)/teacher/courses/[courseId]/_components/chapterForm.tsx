@@ -32,7 +32,7 @@ const formSchema = z.object({
 })
 
 
-const chapterForm = ({initialData, courseId}: ChapterFormProps) => {
+const ChapterForm = ({initialData, courseId}: ChapterFormProps) => {
     const [isCreating,setIsCreating] = useState(false);
     const [isUpdating, setIsUpdating] = useState(false);
 
@@ -145,4 +145,4 @@ const chapterForm = ({initialData, courseId}: ChapterFormProps) => {
   )
 }
 
-export default chapterForm
+export default ChapterForm

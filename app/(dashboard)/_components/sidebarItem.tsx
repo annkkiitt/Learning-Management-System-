@@ -10,7 +10,7 @@ interface SidebarItemProps {
     href: string
 }
 
-const sidebarItem = ({icon: Icon, label, href} : SidebarItemProps) => {
+const SidebarItem = ({icon: Icon, label, href} : SidebarItemProps) => {
     const pathName = usePathname(); //usePathname is a Client Component hook that lets you read the current URL's
     const router = useRouter(); //The useRouter hook allows you to programmatically change routes inside Client
 
@@ -36,4 +36,4 @@ const sidebarItem = ({icon: Icon, label, href} : SidebarItemProps) => {
   )
 }
 
-export default sidebarItem
+export default SidebarItem
