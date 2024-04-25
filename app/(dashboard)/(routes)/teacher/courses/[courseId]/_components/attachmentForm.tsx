@@ -21,7 +21,7 @@ const formSchema = z.object({
   url: z.string().min(1)
 });
 
-const attachmentForm = ({
+const AttachmentForm = ({
   initialData,
   courseId
 }: AttachmentFormProps) => {
@@ -133,4 +133,4 @@ const attachmentForm = ({
   )
 }
 
-export default attachmentForm
+export default AttachmentForm
