@@ -10,7 +10,7 @@ export async function DELETE(
     try{
         const {userId} = auth();
 
-        if(!userId || !isTeacher(userId)) return new NextResponse("Unauthorized User",{ status: 401});
+        if(!userId) return new NextResponse("Unauthorized User",{ status: 401});
 
         const courseOwner = await db.course.findUnique({
             where: {
